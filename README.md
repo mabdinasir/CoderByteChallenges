@@ -1,2 +1,2 @@
 # CoderByteChallenges
-Javascript coerbyte challenges- easy Edition
+Javascript coderbyte challenges- easy Edition
