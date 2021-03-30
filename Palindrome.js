@@ -25,3 +25,14 @@
  *    3) Compare two strings to see if equal meaing I have a Palindrome                 *
  *                                                                                      *
  ***************************************************************************************/
+
+function Palindrome(str) {
+  str = str.replace(/ /g, "").toLowerCase();
+  var compareStr = str.split("").reverse().join("");
+
+  if (compareStr === str) {
+    return true;
+  } else {
+    return false;
+  }
+}
