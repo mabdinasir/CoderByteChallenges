@@ -1,0 +1,22 @@
+function NearestSmallerValues(arr) { 
+  let stack = [];
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    while (stack.length && stack[stack.length - 1] > arr[i]) {
+      stack.pop();
+    }
+    result.push(stack.length ? stack[stack.length - 1] : -1);
+    stack.push(arr[i]);
+  }
+  return result.join(' '); 
+}
+
+// Example usage:
+const input1 = [5, 3, 1, 9, 7, 3, 4, 1];
+const output1 = NearestSmallerValues(input1);
+console.log(output1); // Output: -1 -1 -1 1 1 1 3 1
+
+const input2 = [2, 4, 5, 1, 7];
+const output2 = NearestSmallerValues(input2);
+console.log(output2); // Output: -1 2 4 -1 1
