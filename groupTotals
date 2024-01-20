@@ -1,0 +1,18 @@
+function groupTotals(strArr) {
+  const result = {};
+
+  strArr.forEach(pair => {
+    const [key, value] = pair.split(':');
+    result[key] = (result[key] || 0) + parseInt(value);
+  });
+
+  return strArr.filter(pair => result[pair.split(':')[0]] !== 0).sort().join(',');
+}
+
+const input1 = ["X:-1", "Y:1", "X:-4", "B:3", "X:5"];
+const output1 = groupTotals(input1);
+console.log(output1); // Output: B:3,Y:1
+
+const input2 = ["Z:0", "A:-1"];
+const output2 = groupTotals(input2);
+console.log(output2); // Output: A:-1
